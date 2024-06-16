@@ -46,7 +46,8 @@ if __name__ == "__main__":
 
     # Display statistics
     st.header("Data statistics")
-    col1, col2, col3 = st.columns(3)
+    col0, col1, col2, col3 = st.columns(4)
+    col0.metric(label="Number of sites", value=f"{len(df.index)} sites")
     col1.metric(label="Coutries count", value=f"{len(np.unique(df['country']))} countries")
     col2.metric(label="Average number of outputs", value=f"{int(df.loc[:, 'num_outputs'].mean())} outputs")
     col3.metric(label="Average capacity", value=f"{int(df.loc[:, 'system_DC_capacity_W'].mean())} W")
