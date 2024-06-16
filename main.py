@@ -48,7 +48,7 @@ if __name__ == "__main__":
     st.header("Data statistics")
     col1, col2, col3 = st.columns(3)
     col1.metric(label="Coutries count", value=f"{len(np.unique(df['country']))} countries")
-    col2.metric(label="Avarege number of outputs", value=f"{int(df.loc[:, 'num_outputs'].mean())} outputs")
+    col2.metric(label="Average number of outputs", value=f"{int(df.loc[:, 'num_outputs'].mean())} outputs")
     col3.metric(label="Average capacity", value=f"{int(df.loc[:, 'system_DC_capacity_W'].mean())} W")
     st.divider()
 
