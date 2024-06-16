@@ -16,7 +16,7 @@ def display_map(df: pd.DataFrame):
                             color_continuous_scale=color_scale,
                             #size="num_outputs",
                             zoom=3, 
-                            height=600,
+                            height=750,
                             width=1000)
 
     fig.update_layout(mapbox_style="open-street-map")
@@ -37,14 +37,12 @@ if __name__ == "__main__":
 
     # Raw dataframe
     st.header("Raw data - PVOutput ids")
-    st.dataframe(df)
+    st.dataframe(df, use_container_width=True)
     st.divider()
 
     # Display map
     display_map(df)
     st.divider()
-
-
 
     # Display statistics
     st.header("Data statistics")
@@ -58,4 +56,4 @@ if __name__ == "__main__":
     # Data charts
     st.header("Data charts")
     st.subheader("Distribution by country")
-    st.bar_chart(df["country"].value_counts(), color="#ab1b11cc")
+    st.bar_chart(df["country"].value_counts(), color="#ab1b11cc", height=600)
